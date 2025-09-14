@@ -1,15 +1,13 @@
 class Solution {
     public char findTheDifference(String s, String t) {
-        char c1[]=s.toCharArray();
-        char c2[]=t.toCharArray();
-        Arrays.sort(c1);
-        Arrays.sort(c2);
-        char ch=' ';
-        for(int i=0;i<c1.length;i++){
-            if(c1[i]!=c2[i]){
-                return c2[i];
-            }
+        int total=0;
+        for(int i=0;i<t.length();i++){
+            total+=t.charAt(i);
         }
-        return c2[c2.length-1];
+
+        for(int i=0;i<s.length();i++){
+            total=total-s.charAt(i);
+        }
+        return (char)total;
     }
 }
