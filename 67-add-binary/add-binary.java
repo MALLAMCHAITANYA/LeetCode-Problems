@@ -6,12 +6,12 @@ class Solution {
         int j=b.length()-1; //j=0 sb= ""(empty)
         while(i>=0 || j>=0 || carry==1){
             if(i>=0){
-                carry+=a.charAt(i--)-'0';
+                carry+=a.charAt(i--)-'0'; //49-48=1, carry=1
             }
             if(j>=0){
-                carry+=b.charAt(j--)-'0';
+                carry+=b.charAt(j--)-'0'; //49-48=1, carry=2
             }
-            sb.append(carry%2);
+            sb.append(carry%2); //sb="001"
             carry=carry/2;
         }
         return sb.reverse().toString();
