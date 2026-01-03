@@ -6,12 +6,11 @@ class Solution {
             if(nums[i]==1){
                 count++;
             }
-            else{
-                max=Math.max(count, max);
+            else{ 
                 count=0;
             }
+            max=Math.max(count, max);
         }
-        max=Math.max(count, max);
         return max;
     }
 }
