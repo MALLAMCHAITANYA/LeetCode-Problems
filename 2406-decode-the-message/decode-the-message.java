@@ -9,15 +9,15 @@ class Solution {
                 i++;
             }
         }
-        String ans="";
+        StringBuilder sb=new StringBuilder();
         for(char ch:message.toCharArray()){
             if(ch==' '){
-                ans+=' ';
+                sb.append(' ');
             }
             else{
-                ans+=map.get(ch);
+                sb.append(map.get(ch));
             }
         }
-        return ans;
+        return sb.toString();
     }
 }
