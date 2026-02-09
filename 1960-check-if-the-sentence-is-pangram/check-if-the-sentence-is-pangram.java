@@ -1,9 +1,13 @@
 class Solution {
     public boolean checkIfPangram(String sentence) {
-        HashSet<Character>set=new HashSet<>();
-        for(char ch:sentence.toCharArray()){
-            set.add(ch);
+        String alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+        for (char ch : alphabet.toCharArray()) {
+            if (!sentence.contains(String.valueOf(ch))) {
+                return false;
+            }
         }
-        return set.size()==26;
+
+        return true;
     }
 }
