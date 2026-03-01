@@ -12,6 +12,7 @@ class Solution {
             for(int j=1;j<n;j++){
                 if(binary.charAt(j)=='0' && binary.charAt(j-1)=='0'){
                     valid=false;
+                    break;
                 }
             }
             if(valid){
