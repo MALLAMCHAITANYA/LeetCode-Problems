@@ -1,5 +1,7 @@
 class Solution {
     public int numberOfBeams(String[] bank) {
+        int total=0;
+        int prev=0;
         int count[]=new int[bank.length];
         for(int i=0;i<bank.length;i++){
             int c=0;
@@ -9,18 +11,10 @@ class Solution {
                 }
             }
             count[i]=c;
-        }
-        ArrayList<Integer>list=new ArrayList<>();
-        for(int c:count){
-            if(c!=0){
-                list.add(c);
+            if(c>0){
+                total+=c*prev;
+                prev=c;
             }
-        }
-        int total=0;
-        int t;
-        for(int i=1;i<list.size();i++){
-            t=list.get(i)*list.get(i-1);
-            total+=t;
         }
         return total;
     }
