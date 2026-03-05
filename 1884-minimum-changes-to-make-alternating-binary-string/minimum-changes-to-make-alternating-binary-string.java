@@ -1,31 +1,15 @@
 class Solution {
     public int minOperations(String s) {
-        String s0="";
-        String s1="";
-        for(int i=0;i<s.length();i++){
-            if(i%2==0){
-                s0+="0";
-            }
-            else{
-                s0+="1";
-            }
-        }
-        for(int i=0;i<s.length();i++){
-            if(i%2==0){
-                s1+="1";
-            }
-            else{
-                s1+="0";
-            }
-        }
-        int c1=0;
         int c0=0;
+        int c1=0;
         for(int i=0;i<s.length();i++){
-            if(s.charAt(i)!=s0.charAt(i)){
-                c0++;
+            if(i%2==0){
+                if(s.charAt(i)=='0') c1++;
+                else c0++;
             }
-            if(s.charAt(i)!=s1.charAt(i)){
-                c1++;
+            else{
+                if(s.charAt(i)=='1') c1++;
+                else c0++;
             }
         }
         return Math.min(c0,c1);
