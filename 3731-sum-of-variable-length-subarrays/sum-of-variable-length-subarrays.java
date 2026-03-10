@@ -1,14 +1,11 @@
 class Solution {
     public int subarraySum(int[] nums) {
-        int total=0;
-        for(int i=0;i<nums.length;i++) {
-            int start=Math.max(0,i-nums[i]);
-
-            for(int j=start;j<=i;j++) {
-                total+=nums[j];
+        int sum=0;
+        for(int i=0;i<nums.length;i++){
+            for(int start=Math.max(0,i-nums[i]);start<=i;start++){
+                sum+=nums[start];
             }
         }
-
-        return total;
+        return sum;
     }
 }
