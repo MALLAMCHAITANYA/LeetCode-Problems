@@ -10,7 +10,10 @@ class Solution {
                 complement+="0";
             }
         }
-        int num=Integer.parseInt(complement,2);
+        int num=0;
+        for(int i=complement.length()-1;i>=0;i--){
+            num+=(complement.charAt(i)-'0')*(int)Math.pow(2,(complement.length()-1)-i);
+        }
         return num;
     }
 }
