@@ -3,7 +3,7 @@ class Solution {
         int count=0;
         for(int i=0;i<s.length();i++){
             for(int j=i;j<s.length();j++){
-                if(isPalin(s,i,j)){
+                if(isPalindrome(s,i,j)){
                     count++;
                 }
             }
@@ -11,7 +11,7 @@ class Solution {
         return count;
     }
 
-    private boolean isPalin(String s, int left, int right){
+    private boolean isPalindrome(String s,int left,int right){
         while(left<right){
             if(s.charAt(left)!=s.charAt(right)){
                 return false;
