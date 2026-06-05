@@ -17,8 +17,9 @@ class Solution {
             int curr=str.charAt(i)-'0';
             int left=str.charAt(i-1)-'0';
             int right=str.charAt(i+1)-'0';
-            if(curr>left&&curr>right)count++;
-            if(curr<left&&curr<right)count++;
+            if(curr>left && curr>right || curr<left && curr<right){
+                count++;
+            }
         }
         return count;
     }
