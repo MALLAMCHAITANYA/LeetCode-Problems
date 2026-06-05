@@ -11,14 +11,14 @@ class Solution {
         if(n<100){
             return 0;
         }
-        String s=n+"";
+        String str=n+"";
         int count=0;
-        for(int i=1;i<s.length()-1;i++){
-            if(s.charAt(i)>s.charAt(i-1) && s.charAt(i)>s.charAt(i+1) ||
-            s.charAt(i)<s.charAt(i-1) && s.charAt(i)<s.charAt(i+1)){
-                System.out.println(s.charAt(i));
-                count++;
-            }
+        for(int i=1;i<str.length()-1;i++){
+            int curr=str.charAt(i)-'0';
+            int left=str.charAt(i-1)-'0';
+            int right=str.charAt(i+1)-'0';
+            if(curr>left&&curr>right)count++;
+            if(curr<left&&curr<right)count++;
         }
         return count;
     }
